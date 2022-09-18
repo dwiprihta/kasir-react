@@ -4,9 +4,9 @@ import { Col } from "react-bootstrap";
 export default function Hasil() {
   return (
     <Col md={3} mt="2">
-      <h7>
+      <h6>
         <strong>Hasil</strong>
-      </h7>
+      </h6>
       <hr />
     </Col>
   );
