@@ -20,7 +20,7 @@ const App = () => {
     myFetch();
   }, []);
 
-  console.log(menus);
+  //   console.log(menus);
 
   return (
     <div className="App">
