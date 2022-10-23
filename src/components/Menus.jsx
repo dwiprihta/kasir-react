@@ -4,22 +4,27 @@ import { numberWithCommas } from "../util/util";
 import "./compo.scss";
 
 export default function Menus(props) {
+  const { menu, masukKeranjang } = props;
   return (
     <Col md={4}>
-      <Card style={{ width: "100%" }} className="mb-4 shadow b-none">
+      <Card
+        style={{ width: "100%" }}
+        className="mb-4 shadow b-none"
+        onClick={() => masukKeranjang(menu)}
+      >
         <Card.Img
           variant="top"
           src={
             "assets/images/" +
-            props.menu.category.nama.toLowerCase() +
+            menu.category.nama.toLowerCase() +
             "/" +
-            props.menu.gambar
+            menu.gambar
           }
         />
         <Card.Body>
-          <h6>{props.menu.nama}</h6>
+          <h6>{menu.nama}</h6>
           <Badge pill bg="primary">
-            Rp {numberWithCommas(props.menu.harga)}
+            Rp {numberWithCommas(menu.harga)}
           </Badge>
         </Card.Body>
       </Card>

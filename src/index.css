@@ -6,3 +6,8 @@ body {
   background-color: #50a85d;
   color: #fff !important;
 }
+
+.category-aktif {
+  background-color: #ff0303;
+  color: white;
+}
