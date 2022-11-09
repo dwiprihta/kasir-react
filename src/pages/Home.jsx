@@ -121,7 +121,7 @@ export default function Home() {
                 ))}
               </Row>
             </Col>
-            <Hasil keranjangs={keranjang} />
+            <Hasil keranjangs={keranjang}/>
           </Row>
         </Container>
       </div>
