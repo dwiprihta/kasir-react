@@ -6,8 +6,7 @@ import { API_URL } from "../util/constants";
 import { useNavigate } from "react-router";
 
 
-export default function TotalBayar(props) {
-const { keranjangs } = props;
+export default function TotalBayar({ keranjangs }) {
 const navigate = useNavigate();
 const submitTotalBayar = (totalBayar) => {
     const pesanan = {

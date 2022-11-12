@@ -22,20 +22,22 @@ export default function Home() {
       }
     };
     myFetch();
+    listKeranjang();
+  }, []);
 
-    axios
-      .get(API_URL + "keranjangs")
-      .then((response) => {
-        console.log(response);
-        setKeranjang(response.data);
-      })
-      .catch((error) => {
-        console.log("GAGAL MENAMPILKAN !");
-      });
-  }, [keranjang]);
+  const listKeranjang = async () => {
+    try {
+      let url = API_URL + "keranjangs";
+      let response = await axios.get(url);
+      console.log('heheh');
+      setKeranjang(response.data);
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   const gantiKat = (value) => {
-    setchooseCategory(value);
+    setchooseCategory(value)
     axios
       .get(API_URL + "products?category.nama=" + value)
       .then((response) => {
@@ -67,6 +69,7 @@ export default function Home() {
                 showConfirmButton: false,
                 timer: 1500,
               });
+              listKeranjang();
             })
             .catch((error) => {
               console.log("Error yaa ", error);
@@ -121,7 +124,7 @@ export default function Home() {
                 ))}
               </Row>
             </Col>
-            <Hasil keranjangs={keranjang}/>
+            <Hasil keranjangs={keranjang} listKeranjang={listKeranjang}/>
           </Row>
         </Container>
       </div>

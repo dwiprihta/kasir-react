@@ -3,8 +3,7 @@ import { Card, Badge, Col } from "react-bootstrap";
 import { numberWithCommas } from "../util/util";
 import "./compo.scss";
 
-export default function Menus(props) {
-  const { menu, masukKeranjang } = props;
+export default function Menus({menu, masukKeranjang}) {
   return (
     <Col md={4}>
       <Card
